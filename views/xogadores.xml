@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+      <record model="ir.actions.act_window" id="xogadores_list_action">
+            <field name="name">Xogadores</field>
+            <!-- O que se visualiza na parte superior esquerda -->
+            <field name="res_model">odoo_xadrez.xogadores</field>
+            <field name="view_mode">tree,form</field>  <!--Añadimos graph para vista gráfica-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Tes que crear o primeiro rexistro</p>
+            </field>
+
+        </record>
+
+      <!-- Agora mesmo a tree_view é editable, polo que form non se usa -->
+      <record model="ir.ui.view" id="xogadores_form_view">
+            <field name="name">xogadores.form</field>
+            <field name="model">odoo_xadrez.xogadores</field>
+            <field name="arch" type="xml">
+                <form string="Formulario Xogadores">
+                    <sheet>
+                        <group>
+                            <field name="nomeXogador"/>
+                            <field name="apelidosXogador"/>
+                            <field name="clube_id"/>
+<!--                            <field name="clube_nome"/>-->
+                            <field name="telefonoXogador"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <!-- Vista tree. Si no se aplica, desinstalar y volver a instalar la app en odoo. -->
+        <!-- editable="top" fai prescindible o form_view-->
+        <record model="ir.ui.view" id="xogadores_tree_view">
+            <field name="name">xogadores.tree</field>
+            <field name="model">odoo_xadrez.xogadores</field>
+            <field name="arch" type="xml">
+                <tree string="Formulario Xogadores" editable ="top">
+                    <field name="nomeXogador"/>
+                    <field name="apelidosXogador"/>
+                    <field name="clube_id"/>
+                    <field name="telefonoXogador"/>
+                </tree>
+            </field>
+        </record>
+
+      <!-- Filtro activo por defecto. Agrupa segundo o clube do xogador. -->
+      <record model="ir.filters" id="filtro_xogadores_clubes">
+            <field name="name">Filtro xogadores por clube</field>
+            <field name="model_id">odoo_xadrez.xogadores</field>
+            <field name="context">{'group_by': ['clube_id']}</field>
+            <field name="is_default">true</field>
+            <field name="active">true</field>
+            <field name="sort">[]</field>
+            <field name="domain">[]</field><!-- Aquí iría o filtro se fose por campos e non unha agrupación xeral-->
+            <field name="user_id"></field><!-- En branco para que esté dispoñible para todos os usuarios -->
+            <field name="action_id"
+                   eval="ref('odoo_xadrez.xogadores_list_action')"/><!-- Obtemos o id a partir do id externo-->
+        </record>
+  </data>
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <menuitem id="main_odoo_xadrez" name="Xadrez"/> <!--Menú de Nivel 0-->
+        <!--Menús de Nivel 1:-->
+        <menuitem id="menu_clubes" name="Clubes" parent="main_odoo_xadrez" action="clubes_list_action"/>
+        <menuitem id="menu_xogadores" name="Xogadores" parent="main_odoo_xadrez" action="xogadores_list_action"/>
+        <menuitem id="menu_partidas" name="Partidas" parent="main_odoo_xadrez" action="partidas_list_action"/>
+    </data>
+</odoo>
