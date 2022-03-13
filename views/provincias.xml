@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="provincias_list_action">
+            <field name="name">Provincias</field><!--O que se visualiza na parte superior esquerda-->
+            <field name="res_model">odoo_xadrez.provincias</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Tes que crear o primeiro rexistro</p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="provincias_form_view">
+            <field name="name">provincias.form</field>
+            <field name="model">odoo_xadrez.provincias</field>
+            <field name="arch" type="xml">
+                <form string="Formulario provincias">
+                    <sheet>
+                        <group>
+                            <field name="nomeProvincia"/>
+                            <field name="codProvincia"/>
+                            <field name="pais_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="provincias_tree_view">
+            <field name="name">provincias.tree</field>
+            <field name="model">odoo_xadrez.provincias</field>
+            <field name="arch" type="xml">
+                <tree string="provincias Tree">
+                    <field name="nomeProvincia"/>
+                    <field name="codProvincia"/>
+                    <field name="pais_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="provincias_search_view">
+            <field name="name">provincias.search</field>
+            <field name="model">odoo_xadrez.provincias</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nomeProvincia"/>
+                    <field name="codProvincia"/>
+                    <field name="pais_id"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -25,9 +25,9 @@
                             <field name="codigoRexistro"/>
                             <field name="localXogo"/>
                             <field name="localidade"/>
-                            <field name="provincia"/>
+                            <field name="provincia_id"/>
                             <field name="cp"/>
-                            <field name="pais"/>
+                            <field name="pais_id"/>
                         </group>
                     </sheet>
                 </form>
@@ -47,9 +47,9 @@
                     <field name="codigoRexistro"/>
                     <field name="localXogo"/>
                     <field name="localidade"/>
-                    <field name="provincia"/>
+                    <field name="provincia_id"/>
                     <field name="cp"/>
-                    <field name="pais"/>
+                    <field name="pais_id"/>
                 </tree>
             </field>
         </record>

@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 odoo_xadrez_clubes,odoo_xadrez.clubes,model_odoo_xadrez_clubes,base.group_user,1,1,1,1
 odoo_xadrez_xogadores,odoo_xadrez.xogadores,model_odoo_xadrez_xogadores,base.group_user,1,1,1,1
 odoo_xadrez_partidas,odoo_xadrez.partidas,model_odoo_xadrez_partidas,base.group_user,1,1,1,1
+odoo_xadrez_paises,odoo_xadrez.paises,model_odoo_xadrez_paises,base.group_user,1,1,1,1
+odoo_xadrez_provincias,odoo_xadrez.provincias,model_odoo_xadrez_provincias,base.group_user,1,1,1,1

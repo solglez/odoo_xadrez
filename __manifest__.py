@@ -24,6 +24,9 @@
 
     # always loaded
     'data': [
+        'views/templates.xml',
+        'views/paises.xml',
+        'views/provincias.xml',
         'views/clubes.xml',
         'views/xogadores.xml',
         'views/partidas.xml',

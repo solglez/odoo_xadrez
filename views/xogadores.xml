@@ -11,7 +11,7 @@
 
         </record>
 
-      <!-- Agora mesmo a tree_view é editable, polo que form non se usa -->
+
       <record model="ir.ui.view" id="xogadores_form_view">
             <field name="name">xogadores.form</field>
             <field name="model">odoo_xadrez.xogadores</field>
@@ -19,24 +19,45 @@
                 <form string="Formulario Xogadores">
                     <sheet>
                         <group>
-                            <field name="nomeXogador"/>
-                            <field name="apelidosXogador"/>
-                            <field name="clube_id"/>
-<!--                            <field name="clube_nome"/>-->
-                            <field name="telefonoXogador"/>
+                            <group>
+                                <field name="nomeXogador"/>
+                                <field name="apelidosXogador"/>
+                            </group>
+                            <group>
+                                <field name="clube_id"/>
+                                <field name="elo"/>
+                            </group>
                         </group>
+                        <notebook>
+                            <page string="Partidas con Brancas">
+                                <field name="partidasBrancas_ids" string=""/>
+                            </page>
+                            <page string="Partidas con Negras">
+                                <field name="partidasNegras_ids" string=""/>
+                            </page>
+                            <page string="Datos Persoais">
+                                <group>
+                                    <group>
+                                        <field name="telefonoXogador"/>
+                                        <field name="foto"/>
+                                    </group>
+                                    <group>
+                                        <field name="dataNacemento"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
 
       <!-- Vista tree. Si no se aplica, desinstalar y volver a instalar la app en odoo. -->
-        <!-- editable="top" fai prescindible o form_view-->
         <record model="ir.ui.view" id="xogadores_tree_view">
             <field name="name">xogadores.tree</field>
             <field name="model">odoo_xadrez.xogadores</field>
             <field name="arch" type="xml">
-                <tree string="Formulario Xogadores" editable ="top">
+                <tree string="Formulario Xogadores" >
                     <field name="nomeXogador"/>
                     <field name="apelidosXogador"/>
                     <field name="clube_id"/>

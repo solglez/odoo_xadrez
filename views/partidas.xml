@@ -19,12 +19,14 @@
                 <form string="Formulario Partidas">
                     <sheet>
                         <group>
+                            <field name="name"/>
                             <field name="dataPartida"/>
                             <field name="xogadorBrancas_id"/>
 <!--                            <field name="xogadorBrancas"/>-->
                             <field name="xogadorNegras_id"/>
 <!--                            <field name="xogadorNegras"/>-->
                             <field name="resultado"/>
+                            <field name="arquivoPng"/>
                         </group>
                     </sheet>
                 </form>
@@ -32,14 +34,13 @@
         </record>
 
       <!-- Vista tree. Si no se aplica, desinstalar y volver a instalar la app en odoo. -->
-        <!-- editable="top" fai prescindible o form_view-->
         <record model="ir.ui.view" id="partidas_tree_view">
             <field name="name">partidas.tree</field>
             <field name="model">odoo_xadrez.partidas</field>
             <field name="arch" type="xml">
                 <!-- con decoration-... podemos definir distintas cores dependendo do valor dun campo, neste caso resultado
               sendo -sucess verde, -warning amarelo, -danger vermello, -primary azul, -bf bold, -muted grisaceo... -->
-                <tree string="Formulario Partidas" editable ="top" decoration-success="resultado == 'Victoria Blancas'" decoration-bf="resultado == 'Victoria Negras'" decoration-muted="resultado == 'Tablas'">
+                <tree string="Formulario Partidas" decoration-success="resultado == 'Victoria Blancas'" decoration-bf="resultado == 'Victoria Negras'" decoration-muted="resultado == 'Tablas'">
                     <field name="dataPartida"/>
                     <field name="xogadorBrancas_id"/>
                     <field name="xogadorNegras_id"/>

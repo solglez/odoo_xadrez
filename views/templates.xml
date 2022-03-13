@@ -1,24 +1,83 @@
 <odoo>
     <data>
-<!--
-        <template id="listing">
-          <ul>
-            <li t-foreach="objects" t-as="object">
-              <a t-attf-href="#{ root }/objects/#{ object.id }">
-                <t t-esc="object.display_name"/>
-              </a>
-            </li>
-          </ul>
-        </template>
-        <template id="object">
-          <h1><t t-esc="object.display_name"/></h1>
-          <dl>
-            <t t-foreach="object._fields" t-as="field">
-              <dt><t t-esc="field"/></dt>
-              <dd><t t-esc="object[field]"/></dd>
-            </t>
-          </dl>
-        </template>
--->
+        <!-- Algunhas provincias e países engadidos por código para poder polos por defecto e relacionalos -->
+        <record model="odoo_xadrez.paises" id="odoo_xadrezpais_es">
+            <field name="name">España</field>
+            <field name="codPais">ES</field>
+        </record>
+        <record model="odoo_xadrez.paises" id="odoo_xadrezpais_af">
+            <field name="name">Afganistán</field>
+            <field name="codPais">AF</field>
+        </record>
+
+        <!-- As provincias teñen como país España, polo id que definimos arriba -->
+        <!-- Pontevedra non é PON, xa, pero quedou así-->
+        <record model="odoo_xadrez.provincias" id="odoo_xadrezprovincia_pon">
+            <field name="nomeProvincia">Pontevedra</field>
+            <field name="codProvincia">PON</field>
+            <field name="pais_id" eval="ref('odoo_xadrezpais_es')"/>
+        </record>
+        <record model="odoo_xadrez.provincias" id="odoo_xadrezprovincia_ab">
+            <field name="nomeProvincia">Albacete</field>
+            <field name="codProvincia">AB</field>
+            <field name="pais_id" eval="ref('odoo_xadrezpais_es')"/>
+        </record>
+
+        <!-- Varios paises e provincias para as vistas de busqueda-->
+        <record model="odoo_xadrez.paises" id="odoo_xadrezpais_em">
+            <field name="name">Pais1</field>
+            <field name="codPais">EM</field>
+        </record>
+        <record model="odoo_xadrez.paises" id="odoo_xadrezpais_am">
+            <field name="name">Pais2</field>
+            <field name="codPais">AF</field>
+        </record>
+        <record model="odoo_xadrez.paises" id="odoo_xadrezpais_eh">
+            <field name="name">Pais3</field>
+            <field name="codPais">EH</field>
+        </record>
+        <record model="odoo_xadrez.paises" id="odoo_xadrezpais_ah">
+            <field name="name">Pais4</field>
+            <field name="codPais">AH</field>
+        </record>
+        <record model="odoo_xadrez.paises" id="odoo_xadrezpais_ek">
+            <field name="name">Pais5</field>
+            <field name="codPais">EK</field>
+        </record>
+        <record model="odoo_xadrez.paises" id="odoo_xadrezpais_ak">
+            <field name="name">Pais6</field>
+            <field name="codPais">AK</field>
+        </record>
+
+        <record model="odoo_xadrez.provincias" id="odoo_xadrezprovincia_pa">
+            <field name="nomeProvincia">Prov1</field>
+            <field name="codProvincia">PA</field>
+            <field name="pais_id" eval="ref('odoo_xadrezpais_es')"/>
+        </record>
+        <record model="odoo_xadrez.provincias" id="odoo_xadrezprovincia_aa">
+            <field name="nomeProvincia">Prov2</field>
+            <field name="codProvincia">AA</field>
+            <field name="pais_id" eval="ref('odoo_xadrezpais_es')"/>
+        </record>
+        <record model="odoo_xadrez.provincias" id="odoo_xadrezprovincia_pi">
+            <field name="nomeProvincia">Prov3</field>
+            <field name="codProvincia">PI</field>
+            <field name="pais_id" eval="ref('odoo_xadrezpais_es')"/>
+        </record>
+        <record model="odoo_xadrez.provincias" id="odoo_xadrezprovincia_ai">
+            <field name="nomeProvincia">Prov4</field>
+            <field name="codProvincia">AI</field>
+            <field name="pais_id" eval="ref('odoo_xadrezpais_es')"/>
+        </record>
+        <record model="odoo_xadrez.provincias" id="odoo_xadrezprovincia_po">
+            <field name="nomeProvincia">Prov5</field>
+            <field name="codProvincia">PO</field>
+            <field name="pais_id" eval="ref('odoo_xadrezpais_es')"/>
+        </record>
+        <record model="odoo_xadrez.provincias" id="odoo_xadrezprovincia_ao">
+            <field name="nomeProvincia">Prov6</field>
+            <field name="codProvincia">AO</field>
+            <field name="pais_id" eval="ref('odoo_xadrezpais_es')"/>
+        </record>
     </data>
 </odoo>
