@@ -25,11 +25,13 @@ class clubes(models.Model):
                               default=lambda self: self.env['odoo_xadrez.paises'].search(
                                   [('codPais', '=', "ES")], limit=1))
 
-    # Da relación con provincia - As provincias desplegadas dependen do país (non hay por defecto)
-    provincia_id = fields.Many2one('odoo_xadrez.provincias', domain="[('pais_id','=',pais_id)]")
+    # Da relación con provincia - As provincias desplegadas dependen do país (por defecto pontevedra)
+    provincia_id = fields.Many2one('odoo_xadrez.provincias', domain="[('pais_id','=',pais_id)]", default=lambda self: self.pais_id.provincias_ids.search(
+                                            [], limit=1))
 
-    #Se poñemos por defecto pontevedra non se elimina do campo ao cambiar o país. Tal vez poda resolverse vaciando a
-    #   provincia cun onChange do pais?
+
+    # provincia_id = fields.Many2one('odoo_xadrez.provincias', domain="[('pais_id','=',pais_id)]", default=lambda self:
+    # self.env[pais_id.provincias_ids].search([('codProvincia', '=', 'PON')], limit=1))
 
 
     #Da forma seguinte se desplegaban tódalas provincias independentes do país e por defecto era Pontevedra
