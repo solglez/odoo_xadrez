@@ -6,8 +6,8 @@ class xogadores(models.Model):
     _name = 'odoo_xadrez.xogadores'
     _description = 'Xogadores de xadrez'
 
-    nomeXogador =fields.Char(string="Nome")
-    apelidosXogador = fields.Char(string="Apelidos")
+    nomeXogador =fields.Char(string="Nome", required=True)
+    apelidosXogador = fields.Char(string="Apelidos", required=True)
     telefonoXogador = fields.Char(string="Teléfono")
     elo=fields.Integer(String="ELO")
     dataNacemento = fields.Date(string="Data de Nacemento")

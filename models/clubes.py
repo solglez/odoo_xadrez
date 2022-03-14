@@ -7,7 +7,7 @@ class clubes(models.Model):
     _description = 'odoo_xadrez de Sol González'
     _sql_constraints = [('nomeUnico', 'unique(nomeClube)', 'Non se pode repetir o nome do clube')]
 
-    name =fields.Char(string="Nome do Clube") #O campo name é o que se ve representado nas relacións, por iso ten que chamarse name
+    name =fields.Char(string="Nome do Clube", required=True) #O campo name é o que se ve representado nas relacións, por iso ten que chamarse name
     nif = fields.Char(string="NIF")
     telefono = fields.Char(string="Teléfono", default="")
     codigoRexistro = fields.Char(string="Código de Rexistro")
