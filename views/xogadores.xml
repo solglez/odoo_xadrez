@@ -30,10 +30,10 @@
                         </group>
                         <notebook>
                             <page string="Partidas con Brancas">
-                                <field name="partidasBrancas_ids" string=""/>
+                                <field name="partidasBrancas_ids" string="" readonly="1"/>
                             </page>
                             <page string="Partidas con Negras">
-                                <field name="partidasNegras_ids" string=""/>
+                                <field name="partidasNegras_ids" string="" readonly="1"/>
                             </page>
                             <page string="Datos Persoais">
                                 <group>
